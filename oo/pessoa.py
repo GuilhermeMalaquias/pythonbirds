@@ -4,9 +4,17 @@ class Pessoa:
         self.filhos = list(filhos)
         self.nome = nome
         self.idade = idade
-
+        
     def cumprimentar(self):
-        return 'Ola'
+        return f'Ola {id(self)}'
+
+    @staticmethod
+    def metodo_statico():
+        return 'Medoto estatico'
+
+    @classmethod
+    def nome_e_atributo_da_classe(cls):
+        return f'{cls} {cls.olhos}'
 
 
 if __name__ == "__main__":
@@ -23,5 +31,7 @@ if __name__ == "__main__":
     Pessoa.olhos = 3
     del guilherme.olhos
     print(Pessoa.olhos, guilherme.olhos, Edson.olhos)
+    print(Pessoa.metodo_statico(), guilherme.metodo_statico())
+    print(Pessoa.nome_e_atributo_da_classe())
 
 
